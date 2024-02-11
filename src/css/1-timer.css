@@ -1,0 +1,104 @@
+.timer-container {
+  padding: 20px;
+}
+
+.datetime-picker-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.datetime-picker {
+  width: 272px;
+  height: 40px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  background-color: #fff;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  padding: 8px 16px;
+}
+
+.datetime-picker:hover {
+  border: 1px solid #000;
+}
+
+.datetime-picker:focus {
+  border: 1px solid #4e75ff;
+}
+
+.datetime-picker-disabled {
+  color: #808080;
+  cursor: not-allowed;
+}
+
+.datetime-picker-disabled:hover,
+.datetime-picker-disabled:focus {
+  border-color: #808080;
+}
+
+.timer-start-btn {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  background-color: #cfcfcf;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #989898;
+  cursor: not-allowed;
+}
+
+.timer-start-btn-able {
+  background-color: #4e75ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.timer-start-btn-able:hover {
+  background-color: #6c8cff;
+}
+
+.timer {
+  display: flex;
+  gap: 24px;
+  width: 346px;
+  height: 72px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 72px;
+}
+
+.value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+}
+
+.iziToast-message {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+}
