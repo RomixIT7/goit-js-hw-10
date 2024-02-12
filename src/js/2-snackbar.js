@@ -15,58 +15,61 @@ function createNotification(e) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
-        resolve(
-          iziToast.show({
-            message: `Fulfilled promise in ${delay}ms`,
-            messageColor: '#fff',
-            messageSize: '16',
-            backgroundColor: '#59a10d',
-            progressBarColor: '#326101',
-            position: 'topRight',
-            iconUrl: successIcon,
-            close: false,
-            buttons: [
-              [
-                `<button type="submit" style="background-color: inherit"><img src='${closeIcon}'/></button>`,
-                function (instance, toast) {
-                  instance.hide(
-                    {
-                      transitionOut: 'fadeOut',
-                    },
-                    toast
-                  );
-                },
-              ],
-            ],
-          })
-        );
+        resolve(delay);
       } else {
-        reject(
-          iziToast.show({
-            message: `Rejected promise in ${delay}ms`,
-            messageColor: '#fff',
-            messageSize: '16',
-            backgroundColor: '#ef4040',
-            progressBarColor: '#b51b1b',
-            position: 'topRight',
-            iconUrl: errorIcon,
-            close: false,
-            buttons: [
-              [
-                `<button type="submit" style="background-color: inherit"><img src="${closeIcon}"/></button>`,
-                function (instance, toast) {
-                  instance.hide(
-                    {
-                      transitionOut: 'fadeOut',
-                    },
-                    toast
-                  );
-                },
-              ],
-            ],
-          })
-        );
+        reject(delay);
       }
     }, delay);
   });
+  promise
+    .then(delay =>
+      iziToast.show({
+        message: `Fulfilled promise in ${delay}ms`,
+        messageColor: '#fff',
+        messageSize: '16',
+        backgroundColor: '#59a10d',
+        progressBarColor: '#326101',
+        position: 'topRight',
+        iconUrl: successIcon,
+        close: false,
+        buttons: [
+          [
+            `<button type="submit" style="background-color: inherit"><img src='${closeIcon}'/></button>`,
+            function (instance, toast) {
+              instance.hide(
+                {
+                  transitionOut: 'fadeOut',
+                },
+                toast
+              );
+            },
+          ],
+        ],
+      })
+    )
+    .catch(delay =>
+      iziToast.show({
+        message: `Rejected promise in ${delay}ms`,
+        messageColor: '#fff',
+        messageSize: '16',
+        backgroundColor: '#ef4040',
+        progressBarColor: '#b51b1b',
+        position: 'topRight',
+        iconUrl: errorIcon,
+        close: false,
+        buttons: [
+          [
+            `<button type="submit" style="background-color: inherit"><img src="${closeIcon}"/></button>`,
+            function (instance, toast) {
+              instance.hide(
+                {
+                  transitionOut: 'fadeOut',
+                },
+                toast
+              );
+            },
+          ],
+        ],
+      })
+    );
 }
